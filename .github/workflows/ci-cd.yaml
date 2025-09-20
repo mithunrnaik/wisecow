@@ -35,4 +35,4 @@ jobs:
         version: 'latest'
 
     - name: Deploy to Minikube
-      run: ./deploy.sh
+      run: sh /home/mithun/projects/wisecow/deploy.sh
