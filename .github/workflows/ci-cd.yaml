@@ -24,6 +24,11 @@ jobs:
     - name: Push Docker image
       run: docker push mithunrnaik/wisecow-app:latest
 
+    - name: Set up kubeconfig
+      run: |
+        mkdir -p $HOME/.kube
+        echo "${{ secrets.KUBECONFIG }}" > $HOME/.kube/config
+
     - name: Setup kubectl
       uses: azure/setup-kubectl@v3
       with:
@@ -34,4 +39,3 @@ jobs:
         kubectl apply -f k8s/deployment.yaml
         kubectl apply -f k8s/service.yaml
         kubectl apply -f k8s/ingress.yaml
-
