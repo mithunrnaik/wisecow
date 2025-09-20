@@ -5,19 +5,20 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
+  ingressClassName: nginx
   tls:
-  - hosts:
-    - wisecow.yourdomain.com
-    secretName: wisecow-tls
+    - hosts:
+        - wisecow.127.0.0.1.nip.io
+      secretName: wisecow-tls
   rules:
-  - host: wisecow.yourdomain.com
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: wisecow-service
-            port:
-              number: 80
+    - host: wisecow.127.0.0.1.nip.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: wisecow-service
+                port:
+                  number: 80
 

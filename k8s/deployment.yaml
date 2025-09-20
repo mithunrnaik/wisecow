@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: wisecow
-        image: <your-dockerhub-username>/wisecow-app:latest
+        image: mithunrnaik/wisecow-app:latest
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 4499
 
