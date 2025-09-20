@@ -34,8 +34,5 @@ jobs:
       with:
         version: 'latest'
 
-    - name: Deploy to Kubernetes
-      run: |
-        kubectl apply --validate=false -f $GITHUB_WORKSPACE/k8s/deployment.yaml
-        kubectl apply --validate=false -f $GITHUB_WORKSPACE/k8s/service.yaml
-        kubectl apply --validate=false -f $GITHUB_WORKSPACE/k8s/ingress.yaml
+    - name: Deploy to Minikube
+      run: ./deploy.sh
