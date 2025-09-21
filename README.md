@@ -1,4 +1,6 @@
-This repository contains a project that demonstrates containerization, secure deployment, and CI/CD automation for a sample web application using Docker, Kubernetes (Minikube), and GitHub Actions.
+This repository contains a project that demonstrates containerization, secure deployment, and CI/CD automation for a sample web application using Docker, Kubernetes (Minikube), and GitHub Actions. 
+
+Refer `wisecow.md` for step-by-step instructions.
 
 It also includes two utility scripts:
 
