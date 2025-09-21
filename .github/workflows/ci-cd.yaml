@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
     - name: Checkout code
@@ -35,4 +35,7 @@ jobs:
         version: 'latest'
 
     - name: Deploy to Minikube
-      run: sh /home/mithun/projects/wisecow/deploy.sh
+      run: |
+        kubectl apply -f k8s/deployment.yaml
+        kubectl apply -f k8s/service.yaml
+        kubectl apply -f k8s/ingress.yaml
